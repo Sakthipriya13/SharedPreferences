@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:label="Login"
+        android:name="com.example.sharedpreferenceapplication.ui.Login">
+        <action android:id="@+id/action_login_to_secondFrag"
+            app:destination="@+id/secondFrag"/>
+    </fragment>
+
+    <fragment android:id="@+id/secondFrag"
+        android:name="com.example.sharedpreferenceapplication.ui.SecondFragment"
+        android:label="SecondFragment">
+        <action android:id="@+id/action_secondFrag_to_login"
+            app:destination="@id/login"/>
+    </fragment>
+
+</navigation>
