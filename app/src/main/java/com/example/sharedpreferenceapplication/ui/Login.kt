@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.sharedpreferenceapplication.R
+import com.example.sharedpreferenceapplication.data.preferences.UserPreferences
+import com.example.sharedpreferenceapplication.data.repository.UserRepository
 import com.example.sharedpreferenceapplication.databinding.ActivityMainBinding
 import com.example.sharedpreferenceapplication.databinding.LoginBinding
 import com.example.sharedpreferenceapplication.viewmodel.LoginViewModel
@@ -45,6 +48,24 @@ class Login : Fragment() {
 //        return inflater.inflate(R.layout.login, container, false)
         binding=DataBindingUtil.inflate(inflater,R.layout.login,container,false)
         binding.lifecycleOwner=this
+
+        var preferences = UserPreferences(requireContext())
+        var repository = UserRepository(preferences)
+        viewModel = LoginViewModel(repository)
+
+        binding.loginViewModel=viewModel
+
+        viewModel.loginStatus.observe(viewLifecycleOwner){ ob ->
+            if (ob) {
+                Toast.makeText(requireContext(), "Login Successful ✅", Toast.LENGTH_SHORT).show()
+                // Navigate to home screen or next fragment
+            } else {
+                Toast.makeText(requireContext(), "Invalid Credentials ❌", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+
         return  binding.root
     }
 
