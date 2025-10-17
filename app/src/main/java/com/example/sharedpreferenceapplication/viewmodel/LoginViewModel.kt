@@ -38,8 +38,8 @@ class LoginViewModel(var userRepository: UserRepository): ViewModel() {
     {
 //        viewModelScope.launch {
             var user = User(userName.value,passWord.value,isAdult.value)
-        Log.e("USER","USER: "+userName.value)
-        var res=userRepository.userLogin(user)
+            Log.e("USER","USER: "+userName.value)
+            var res=userRepository.userLogin(user)
             _loginStatus.value=res
 //        }
 
