@@ -16,4 +16,19 @@ class LoginViewModel : ViewModel() {
     //isAdult
     var _isAdult = MutableLiveData<Boolean>()
     var isAdult : LiveData<Boolean> = _isAdult
+
+    fun load()
+    {
+
+    }
+
+    fun login()
+    {
+
+    }
+
+    fun clear()
+    {
+
+    }
 }
