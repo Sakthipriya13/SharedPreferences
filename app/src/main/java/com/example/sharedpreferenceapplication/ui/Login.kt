@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import com.example.sharedpreferenceapplication.R
 import com.example.sharedpreferenceapplication.data.preferences.UserPreferences
 import com.example.sharedpreferenceapplication.data.repository.UserRepository
-import com.example.sharedpreferenceapplication.databinding.ActivityMainBinding
 import com.example.sharedpreferenceapplication.databinding.LoginBinding
 import com.example.sharedpreferenceapplication.viewmodel.LoginViewModel
 

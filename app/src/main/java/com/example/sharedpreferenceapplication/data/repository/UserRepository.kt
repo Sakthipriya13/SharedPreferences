@@ -3,6 +3,7 @@ package com.example.sharedpreferenceapplication.data.repository
 import android.util.Log
 import com.example.sharedpreferenceapplication.data.preferences.UserPreferences
 import com.example.sharedpreferenceapplication.model.User
+import com.example.sharedpreferenceapplication.model.UserSecretCode
 
 class UserRepository (var userPreferences: UserPreferences){
 
@@ -22,9 +23,16 @@ class UserRepository (var userPreferences: UserPreferences){
 
     }
 
-    fun fnStoreUserSecretCode(){
-
-    }
+//    fun fnStoreUserSecretCode(userSecretCode: UserSecretCode): Boolean{
+//        return if(userSecretCode.userName.isNotEmpty() && userSecretCode.userSecretCode.isNotEmpty())
+//        {
+//
+//            true
+//        }
+//        else{
+//            false
+//        }
+//    }
 
     fun getUserDetails():User{
 //        var user=User(userPreferences.userName,userPreferences.passWord,userPreferences.isAdult)

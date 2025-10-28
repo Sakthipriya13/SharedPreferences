@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.sharedpreferenceapplication.R
 import com.example.sharedpreferenceapplication.data.preferences.UserPreferences
@@ -51,6 +52,14 @@ class SecondFragment : Fragment() {
         dataBinding.secondViewModel=viewModel
         dataBinding.lifecycleOwner=viewLifecycleOwner
 
+//        viewModel.result.observe(viewLifecycleOwner){ ob ->
+//            if(ob == true){
+//                Toast.makeText(requireContext(), "Stored Successful ✅", Toast.LENGTH_SHORT).show()
+//                // Navigate to home screen or next fragment
+//            } else {
+//                Toast.makeText(requireContext(), "Failed ❌", Toast.LENGTH_SHORT).show()
+//            }
+//        }
         return dataBinding.root
     }
 

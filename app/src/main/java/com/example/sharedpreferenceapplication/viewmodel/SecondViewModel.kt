@@ -10,13 +10,17 @@ import com.example.sharedpreferenceapplication.model.UserSecretCode
 
 
 class SecondViewModel(var userRepository: UserRepository) : ViewModel() {
-    var _userSecretCode = MutableLiveData<String?>()
-    var userSecretCode : LiveData<String?> = _userSecretCode
-
-    fun fnEnterUserSecretCode(){
-        var userName = userRepository.getUserName();
-        var user= UserSecretCode(userName,userSecretCode.value)
-
-    }
+//    var _userSecretCode = MutableLiveData<String?>()
+//    var userSecretCode : LiveData<String?> = _userSecretCode
+//
+//    var _result = MutableLiveData<Boolean?>()
+//    var result : LiveData<Boolean?> = _result
+//
+//    fun fnEnterUserSecretCode(){
+//        var userName = userRepository.getUserName();
+//        var user= UserSecretCode(userName,userSecretCode.value)
+//        var res=userRepository.fnStoreUserSecretCode(user)
+//        _result.value=res
+//    }
 
 }
