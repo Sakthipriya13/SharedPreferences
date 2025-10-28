@@ -22,9 +22,17 @@ class UserRepository (var userPreferences: UserPreferences){
 
     }
 
+    fun fnStoreUserSecretCode(){
+
+    }
+
     fun getUserDetails():User{
 //        var user=User(userPreferences.userName,userPreferences.passWord,userPreferences.isAdult)
         return userPreferences.loadUserDetails()
+    }
+
+    fun getUserName(): String? {
+        return userPreferences.userName
     }
 
     fun clearUserDetails(){

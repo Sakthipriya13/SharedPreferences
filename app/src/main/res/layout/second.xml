@@ -3,33 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
-
-    <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/main"
+    <data>
+        <variable
+            name="secondViewModel"
+            type="com.example.sharedpreferenceapplication.viewmodel.SecondViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutDescription="@xml/second_xml_main_scene"
-        tools:context=".ui.SecondFragment">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@color/black"
+        <EditText
+            android:id="@+id/secretCode"
+            android:layout_width="321dp"
+            android:layout_height="51dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Enter Code"
+            android:text="@={secondViewModel.userSecretCode}"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.389" />
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <Button
+            android:id="@+id/enterBtn"
+            android:layout_width="223dp"
+            android:layout_height="73dp"
+            android:textSize="20sp"
+            android:text="ENTER SECRET CODE"
+            android:textStyle="bold"
+            android:onClick="@{() -> secondViewModel.fnEnterUserSecretCode()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.566" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
